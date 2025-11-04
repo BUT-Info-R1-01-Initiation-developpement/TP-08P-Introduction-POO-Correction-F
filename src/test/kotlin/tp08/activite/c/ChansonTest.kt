@@ -12,25 +12,25 @@ class ChansonTest {
         assertEquals("Give life back to music", chansonDaftPunk.titre)
         assertEquals(275, chansonDaftPunk.dureeEnSecondes)
     }
-    /*
-        @Test
-        fun `test de la création d'une chanson avec titre vide`() {
-            assertThrows<IllegalArgumentException> { Chanson("", 275) }
-        }
 
-        @Test
-        fun `test de la création d'une chanson avec durée négative`() {
-            assertThrows<IllegalArgumentException> { Chanson("One", -10) }
-        }
+    @Test
+    fun `test de la création d'une chanson avec titre vide`() {
+        assertThrows<IllegalArgumentException> { Chanson("", 275) }
+    }
 
-        @Test
-        fun `test de la création d'une chanson avec durée égale à 0`() {
-            assertThrows<IllegalArgumentException> { Chanson("One", 0) }
-        }
+    @Test
+    fun `test de la création d'une chanson avec durée négative`() {
+        assertThrows<IllegalArgumentException> { Chanson("One", -10) }
+    }
 
-        @Test
-        fun `test de la création d'une chanson avec durée supérieure à 1800`() {
-            assertThrows<IllegalArgumentException> { Chanson("One", 1801) }
-        }
-    */
+    @Test
+    fun `test de la création d'une chanson avec durée égale à 0`() {
+        assertThrows<IllegalArgumentException> { Chanson("One", 0) }
+    }
+
+    @Test
+    fun `test de la création d'une chanson avec durée supérieure à 1800`() {
+        assertThrows<IllegalArgumentException> { Chanson("One", 1801) }
+    }
+
 }
