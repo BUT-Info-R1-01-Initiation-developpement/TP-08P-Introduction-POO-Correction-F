@@ -59,5 +59,5 @@ fun main() {
 }
 
 // Quels sont les deux types d'objet du "monde réel" qui sont principalement manipulés dans ce programme ?
-// ...
-// ...
+// Chanson
+// Playlist
