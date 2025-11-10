@@ -27,4 +27,23 @@ class Playlist {
         }
         return dureeTotale
     }
+
+    /**
+     * Trouve le premier index de la chanson la plus longue
+     *
+     * @return l'index de la chanson la plus longue (premier index)
+     */
+    fun trouverIndexChansonPlusLongue():Int {
+        require(this.nombreChansons > 0) {"Pas de chanson dans la liste !"}
+        var dureePlusLongue = this.chansons[0]!!.dureeEnSecondes
+        var indiceChansonPlusLongue = 0
+        for (i in 0 until this.nombreChansons) {
+            val chansonCourante = this.chansons[i]!!
+            if (dureePlusLongue < chansonCourante.dureeEnSecondes) {
+                dureePlusLongue = chansonCourante.dureeEnSecondes
+                indiceChansonPlusLongue = i
+            }
+        }
+        return indiceChansonPlusLongue
+    }
 }

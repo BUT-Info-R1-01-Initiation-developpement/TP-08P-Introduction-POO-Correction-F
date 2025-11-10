@@ -90,7 +90,7 @@ class PlaylistTest {
               // Then
               assertEquals(976, maPlaylist.calculerDureeTotale())
           }
-    /*
+
             // -----  tests de la fonction trouverIndexChansonPlusLongue() -----
 
         // ========== Tests pour trouverIndexChansonPlusLongue ==========
@@ -183,5 +183,4 @@ class PlaylistTest {
                 }
             }
 
-        */
 }
