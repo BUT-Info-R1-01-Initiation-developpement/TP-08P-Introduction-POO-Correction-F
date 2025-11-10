@@ -15,4 +15,16 @@ class Playlist {
         this.nombreChansons++
     }
 
+    /**
+     * Calcule la duree totale de la playlist
+     *
+     * @return la duree totale de la playlist
+     */
+    fun calculerDureeTotale(): Int {
+        var dureeTotale = 0
+        for (i in 0 until this.nombreChansons) {
+            dureeTotale += this.chansons[i]!!.dureeEnSecondes
+        }
+        return dureeTotale
+    }
 }

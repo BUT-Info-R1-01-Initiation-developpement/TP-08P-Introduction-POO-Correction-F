@@ -68,7 +68,7 @@ class PlaylistTest {
             }
 
         }
-    /*
+
 
         // -----  tests de la fonction ajouterChanson() -----
 
@@ -80,108 +80,108 @@ class PlaylistTest {
             assertEquals(0, maPlaylist.calculerDureeTotale())
         }
 
-        @Test
-        fun `test durée totale d'une playlist avec quelques chansons`() {
-            // Given : une playlist
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 276))
-            maPlaylist.ajouterChanson(Chanson("Two", 300))
-            maPlaylist.ajouterChanson(Chanson("Three",400))
-            // Then
-            assertEquals(976, maPlaylist.calculerDureeTotale())
-        }
+          @Test
+          fun `test durée totale d'une playlist avec quelques chansons`() {
+              // Given : une playlist
+              val maPlaylist = Playlist()
+              maPlaylist.ajouterChanson(Chanson("One", 276))
+              maPlaylist.ajouterChanson(Chanson("Two", 300))
+              maPlaylist.ajouterChanson(Chanson("Three",400))
+              // Then
+              assertEquals(976, maPlaylist.calculerDureeTotale())
+          }
+    /*
+            // -----  tests de la fonction trouverIndexChansonPlusLongue() -----
 
-        // -----  tests de la fonction trouverIndexChansonPlusLongue() -----
+        // ========== Tests pour trouverIndexChansonPlusLongue ==========
 
-    // ========== Tests pour trouverIndexChansonPlusLongue ==========
+            @Test
+            fun `trouverIndexChansonPlusLongue avec chanson longue au milieu`() {
+                // Given
+                val maPlaylist = Playlist()
+                maPlaylist.ajouterChanson(Chanson("One", 276))
+                maPlaylist.ajouterChanson(Chanson("Two", 300))
+                maPlaylist.ajouterChanson(Chanson("Three",400))
+                maPlaylist.ajouterChanson(Chanson("Three",200))
 
-        @Test
-        fun `trouverIndexChansonPlusLongue avec chanson longue au milieu`() {
-            // Given
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 276))
-            maPlaylist.ajouterChanson(Chanson("Two", 300))
-            maPlaylist.ajouterChanson(Chanson("Three",400))
-            maPlaylist.ajouterChanson(Chanson("Three",200))
+                // When
+                val resultat = maPlaylist.trouverIndexChansonPlusLongue()
 
-            // When
-            val resultat = maPlaylist.trouverIndexChansonPlusLongue()
-
-            // Then
-            assertEquals(2, resultat)
-        }
-
-        @Test
-        fun `trouverIndexChansonPlusLongue avec chanson longue au début`() {
-            // Given
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 876))
-            maPlaylist.ajouterChanson(Chanson("Two", 300))
-            maPlaylist.ajouterChanson(Chanson("Three",400))
-            maPlaylist.ajouterChanson(Chanson("Three",200))
-
-            // When
-            val resultat = maPlaylist.trouverIndexChansonPlusLongue()
-
-            // Then
-            assertEquals(0, resultat)
-        }
-
-        @Test
-        fun `trouverIndexChansonPlusLongue avec chanson longue à la fin`() {
-            // Given
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 276))
-            maPlaylist.ajouterChanson(Chanson("Two", 300))
-            maPlaylist.ajouterChanson(Chanson("Three",400))
-            maPlaylist.ajouterChanson(Chanson("Three",800))
-
-            // When
-            val resultat = maPlaylist.trouverIndexChansonPlusLongue()
-
-            // Then
-            assertEquals(3, resultat)
-        }
-
-        @Test
-        fun `trouverIndexChansonPlusLongue avec toutes les durées identiques`() {
-            // Given
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 200))
-            maPlaylist.ajouterChanson(Chanson("Two", 200))
-            maPlaylist.ajouterChanson(Chanson("Three",200))
-            maPlaylist.ajouterChanson(Chanson("Three",200))
-
-            // When
-            val resultat = maPlaylist.trouverIndexChansonPlusLongue()
-
-            // Then
-            assertEquals(0, resultat)// Devrait retourner le premier index
-        }
-
-        @Test
-        fun `trouverIndexChansonPlusLongue avec une seule chanson`() {
-            // Given
-            val maPlaylist = Playlist()
-            maPlaylist.ajouterChanson(Chanson("One", 276))
-
-            // When
-            val resultat = maPlaylist.trouverIndexChansonPlusLongue()
-
-            // Then
-            assertEquals(0, resultat)
-        }
-
-        @Test
-        fun `trouverIndexChansonPlusLongue avec tableau vide lance exception`() {
-            // Given
-            val maPlaylist = Playlist()
-
-            // When & Then
-            assertThrows<IllegalArgumentException> {
-                maPlaylist.trouverIndexChansonPlusLongue()
+                // Then
+                assertEquals(2, resultat)
             }
-        }
 
-    */
+            @Test
+            fun `trouverIndexChansonPlusLongue avec chanson longue au début`() {
+                // Given
+                val maPlaylist = Playlist()
+                maPlaylist.ajouterChanson(Chanson("One", 876))
+                maPlaylist.ajouterChanson(Chanson("Two", 300))
+                maPlaylist.ajouterChanson(Chanson("Three",400))
+                maPlaylist.ajouterChanson(Chanson("Three",200))
+
+                // When
+                val resultat = maPlaylist.trouverIndexChansonPlusLongue()
+
+                // Then
+                assertEquals(0, resultat)
+            }
+
+            @Test
+            fun `trouverIndexChansonPlusLongue avec chanson longue à la fin`() {
+                // Given
+                val maPlaylist = Playlist()
+                maPlaylist.ajouterChanson(Chanson("One", 276))
+                maPlaylist.ajouterChanson(Chanson("Two", 300))
+                maPlaylist.ajouterChanson(Chanson("Three",400))
+                maPlaylist.ajouterChanson(Chanson("Three",800))
+
+                // When
+                val resultat = maPlaylist.trouverIndexChansonPlusLongue()
+
+                // Then
+                assertEquals(3, resultat)
+            }
+
+            @Test
+            fun `trouverIndexChansonPlusLongue avec toutes les durées identiques`() {
+                // Given
+                val maPlaylist = Playlist()
+                maPlaylist.ajouterChanson(Chanson("One", 200))
+                maPlaylist.ajouterChanson(Chanson("Two", 200))
+                maPlaylist.ajouterChanson(Chanson("Three",200))
+                maPlaylist.ajouterChanson(Chanson("Three",200))
+
+                // When
+                val resultat = maPlaylist.trouverIndexChansonPlusLongue()
+
+                // Then
+                assertEquals(0, resultat)// Devrait retourner le premier index
+            }
+
+            @Test
+            fun `trouverIndexChansonPlusLongue avec une seule chanson`() {
+                // Given
+                val maPlaylist = Playlist()
+                maPlaylist.ajouterChanson(Chanson("One", 276))
+
+                // When
+                val resultat = maPlaylist.trouverIndexChansonPlusLongue()
+
+                // Then
+                assertEquals(0, resultat)
+            }
+
+            @Test
+            fun `trouverIndexChansonPlusLongue avec tableau vide lance exception`() {
+                // Given
+                val maPlaylist = Playlist()
+
+                // When & Then
+                assertThrows<IllegalArgumentException> {
+                    maPlaylist.trouverIndexChansonPlusLongue()
+                }
+            }
+
+        */
 }
