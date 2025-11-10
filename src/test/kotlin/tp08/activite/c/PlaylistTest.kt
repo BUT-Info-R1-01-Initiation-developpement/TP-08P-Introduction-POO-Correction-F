@@ -17,7 +17,7 @@ class PlaylistTest {
     }
 
     // -----  tests de la fonction ajouterChanson() -----
-    /*
+
         @Test
         fun `test ajout d'une chanson à une playlist vierge`() {
             // Given : une playlist vierge et une chanson
@@ -68,6 +68,7 @@ class PlaylistTest {
             }
 
         }
+    /*
 
         // -----  tests de la fonction ajouterChanson() -----
 
