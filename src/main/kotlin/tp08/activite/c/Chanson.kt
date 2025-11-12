@@ -1,10 +1,22 @@
 package tp08.activite.c
 
-data class Chanson(val titre: String, val dureeEnSecondes: Int) {
-
+data class Chanson(
+    val titre: String,
+    val dureeEnSecondes: Int
+) {
     init {
-        require(this.titre.isNotBlank()) { "Le titre doit avoir du contenu"}
-        require(this.dureeEnSecondes > 0) { "La durée doit être strictement supérieure à 0"}
-        require(this.dureeEnSecondes <= 1800) { "La durée ne doit pas dépasser 30 mn"}
+        require(this.titre.isNotBlank()) {
+            "Titre doit avoir du contenu."
+        }
+        require(this.dureeEnSecondes in 1..1800) {
+            "DureeEnSecondes doit être comprise entre 1 et 1800 secondes."
+        }
+    }
+
+    fun rapportDetaille(): String {
+        val min =  this.dureeEnSecondes / 60
+        val sec =   this.dureeEnSecondes % 60
+        return "${this.titre} - ${min}:${sec.toString().padStart(2, '0')}"
     }
 }
+
